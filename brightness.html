@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <title>明るさを調整</title>
   <script>
+    function getParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    function init() {
+      const level = getParam("level") || 50; // デフォルト値 50
+      document.getElementById('brightnessLevel').value = level;
+    }
+
     function adjustBrightness() {
-      const level = document.getElementById('brightnessLevel').value;
-      location.href = `myimageapp://brightness?level=${level}`;
+      const brightness = document.getElementById('brightnessLevel').value;
+      const contrast   = 50; // デフォルト値
+      location.href = `myimageapp://adjust_brightness_contrast?brightness=${brightness}&contrast=${contrast}`;
     }
   </script>
 </head>
-<body>
+<body onload="init()">
   <h2>明るさを調整します</h2>
   <label>明るさレベル: <input type="number" id="brightnessLevel" min="0" max="100" value="50"></label>
   <br><br>

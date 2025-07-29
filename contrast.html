@@ -5,8 +5,9 @@
   <title>コントラストを調整</title>
   <script>
     function adjustContrast() {
-      const level = document.getElementById('contrastLevel').value;
-      location.href = `myimageapp://contrast?level=${level}`;
+      const contrast = document.getElementById('contrastLevel').value;
+      const brightness = 50; // デフォルト値
+      location.href = `myimageapp://adjust_brightness_contrast?brightness=${brightness}&contrast=${contrast}`;
     }
   </script>
 </head>
