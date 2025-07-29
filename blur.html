@@ -4,15 +4,25 @@
   <meta charset="UTF-8">
   <title>ぼかしを実行</title>
   <script>
+    function getParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    function init() {
+      const level = getParam("level") || 50; // デフォルト値 50
+      document.getElementById('blurLevel').value = level;
+    }
+
     function applyBlur() {
       const level = document.getElementById('blurLevel').value;
-      location.href = `myimageapp://blur?level=${level}`;
+      location.href = `myimageapp://apply_blur?level=${level}`;
     }
   </script>
 </head>
-<body>
+<body onload="init()">
   <h2>ぼかしを実行しますか？</h2>
-  <label>ぼかしレベル: <input type="number" id="blurLevel" min="0" max="100" value="50"></label>
+  <label>ぼかしレベル: <input type="number" id="blurLevel" min="0" max="100"></label>
   <br><br>
   <button onclick="applyBlur()" style="font-size:20px;padding:10px 20px;">
     💧 ぼかしを実行
