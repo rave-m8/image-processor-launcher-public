@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>コントラストを調整</title>
+  <script>
+    function adjustContrast() {
+      const level = document.getElementById('contrastLevel').value;
+      location.href = `myimageapp://contrast?level=${level}`;
+    }
+  </script>
+</head>
+<body>
+  <h2>コントラストを調整します</h2>
+  <label>コントラストレベル: <input type="number" id="contrastLevel" min="0" max="100" value="50"></label>
+  <br><br>
+  <button onclick="adjustContrast()" style="font-size:20px;padding:10px 20px;">
+    ⚫ コントラストを実行
+  </button>
+</body>
+</html>

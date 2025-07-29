@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ぼかしを実行</title>
+  <script>
+    function applyBlur() {
+      const level = document.getElementById('blurLevel').value;
+      location.href = `myimageapp://blur?level=${level}`;
+    }
+  </script>
+</head>
+<body>
+  <h2>ぼかしを実行しますか？</h2>
+  <label>ぼかしレベル: <input type="number" id="blurLevel" min="0" max="100" value="50"></label>
+  <br><br>
+  <button onclick="applyBlur()" style="font-size:20px;padding:10px 20px;">
+    💧 ぼかしを実行
+  </button>
+</body>
+</html>

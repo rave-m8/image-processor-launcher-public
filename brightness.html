@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>明るさを調整</title>
+  <script>
+    function adjustBrightness() {
+      const level = document.getElementById('brightnessLevel').value;
+      location.href = `myimageapp://brightness?level=${level}`;
+    }
+  </script>
+</head>
+<body>
+  <h2>明るさを調整します</h2>
+  <label>明るさレベル: <input type="number" id="brightnessLevel" min="0" max="100" value="50"></label>
+  <br><br>
+  <button onclick="adjustBrightness()" style="font-size:20px;padding:10px 20px;">
+    🌞 明るさを実行
+  </button>
+</body>
+</html>
