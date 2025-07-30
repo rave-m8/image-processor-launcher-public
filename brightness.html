@@ -27,8 +27,14 @@
     }
 
     function init() {
-      const level = validateLevel(getParam("level")) || 50;
+      const rawLevel = getParam("level");
+      const level = validateLevel(rawLevel) || 50;
       document.getElementById('brightnessLevel').value = level;
+      
+      // Display escaped parameter if it exists
+      if (rawLevel && rawLevel !== level.toString()) {
+        console.log('Invalid parameter detected and sanitized:', escapeHTML(rawLevel));
+      }
     }
 
     function adjustBrightness() {
