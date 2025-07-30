@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <title>コントラストを調整</title>
   <script>
+    function validateLevel(level) {
+      const num = parseInt(level);
+      return !isNaN(num) && num >= 0 && num <= 100 ? num : 50;
+    }
+
     function adjustContrast() {
-      const contrast = document.getElementById('contrastLevel').value;
-      const brightness = 50; // デフォルト値
+      const contrast = validateLevel(document.getElementById('contrastLevel').value);
+      const brightness = 50;
       location.href = `myimageapp://adjust_brightness_contrast?brightness=${brightness}&contrast=${contrast}`;
     }
   </script>

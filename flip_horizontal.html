@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>左右反転実行</title>
+  <script>
+    function executeCommand() {
+      location.href = 'myimageapp://flip_horizontal';
+    }
+  </script>
 </head>
 <body>
   <h3>左右反転を実行しますか？</h3>
-  <button onclick="location.href='myimageapp://flip_horizontal'">
+  <button onclick="executeCommand()" style="font-size:20px;padding:10px 20px;">
     ▶️ 左右反転を実行
   </button>
 </body>

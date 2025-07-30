@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>モザイク（中）を実行</title>
+  <script>
+    function executeCommand() {
+      location.href = 'myimageapp://apply_mosaic?strength=medium';
+    }
+  </script>
 </head>
 <body>
   <h2>モザイク（中）を実行しますか？</h2>
-  <button onclick="location.href='myimageapp://mosaic_medium'" style="font-size:20px;padding:10px 20px;">
+  <button onclick="executeCommand()" style="font-size:20px;padding:10px 20px;">
     🔲 モザイク（中）を実行
   </button>
 </body>
