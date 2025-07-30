@@ -9,14 +9,31 @@
       return params.get(name);
     }
 
+    function validateLevel(level) {
+      const num = parseInt(level);
+      return !isNaN(num) && num >= 0 && num <= 100 ? num : 50;
+    }
+
+    function escapeHTML(str) {
+      return String(str).replace(/[&<>"']/g, function(match) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[match];
+      });
+    }
+
     function init() {
-      const level = getParam("level") || 50; // デフォルト値 50
+      const level = validateLevel(getParam("level")) || 50;
       document.getElementById('brightnessLevel').value = level;
     }
 
     function adjustBrightness() {
-      const brightness = document.getElementById('brightnessLevel').value;
-      const contrast   = 50; // デフォルト値
+      const brightness = validateLevel(document.getElementById('brightnessLevel').value);
+      const contrast = 50;
       location.href = `myimageapp://adjust_brightness_contrast?brightness=${brightness}&contrast=${contrast}`;
     }
   </script>

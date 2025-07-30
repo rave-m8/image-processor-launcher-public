@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>色調反転を実行</title>
+  <script>
+    function executeCommand() {
+      location.href = 'myimageapp://invert_colors';
+    }
+  </script>
 </head>
 <body>
   <h2>色調反転を実行しますか？</h2>
-  <button onclick="location.href='myimageapp://invert_colors'" style="font-size:20px;padding:10px 20px;">
+  <button onclick="executeCommand()" style="font-size:20px;padding:10px 20px;">
     🎨 色調反転を実行
   </button>
 </body>
